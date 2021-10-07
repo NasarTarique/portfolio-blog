@@ -4,19 +4,23 @@ import "./styles/about.css";
 
 function About() {
   return (
-		  <div className="about-container">
+    <div className="about-container">
       <div className="about">
         <h1 className="about-header"> ABOUT ME</h1>
         <p>
-          <span id="span-hey">Hey</span>, I am
-          <span className="about-name">Tarique Nasar</span>. I am a programmer
-          and a 2nd year BTech student . I love coding , football and novels.
-          check out my projects and blogs.
+          <span id="span-hey">Hey</span>, I am   
+          <div className="about-name"> 
+
+				  <span>  Tarique Nasar .</span>
+          </div>
+				<br />I am a programmer and a 2nd year <br/>BTech student .<br /> I love
+				coding , football and novels. <br/> check out my projects and blogs.
         </p>
+			  <a href="/contact">CONTACT</a>
       </div>
       <div className="about-img">
-			  <img src="/static/frontend/laptop-portfolio.jpg" alt="" />
-	  </div>
+        <img src="/static/frontend/laptop-portfolio.jpg" alt="" />
+      </div>
     </div>
   );
 }
