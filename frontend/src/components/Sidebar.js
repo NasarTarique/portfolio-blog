@@ -17,19 +17,22 @@ const Sidebar = () => {
             fill="white"
           />
           <path
+            className="svg-n"
             d="M83.947 67H73.4001L52.8689 33.3203V67H42.322V15.8125H52.8689L73.4353 49.5625V15.8125H83.947V67Z"
-            fill="#BFC1C4"
+				  fill="#D0A854"
           />
         </svg>
       </div>
       <div className="routes">
         <Link to="/">ABOUT ME</Link>
-        <Link to="/">PROJECTS</Link>
-        <Link to="/">BLOGS</Link>
-        <Link to="/">CONTACT ME</Link>
-			  <div className="padding1">
-			  </div>
-			  <div className="padding2"></div>
+        <Link to="/projects/">PROJECTS</Link>
+        <Link to="/blogs/">BLOGS</Link>
+		<a href="" download>RESUME</a>
+        <Link to="/contact/">CONTACT ME</Link>
+        <div className="padding1"></div>
+        <div className="padding1"></div>
+        <div className="padding1"></div>
+        <div className="padding2"></div>
       </div>
     </div>
   );

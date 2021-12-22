@@ -40,10 +40,11 @@
 }
 .routes > a {
 		color:white;
-		font-size:22px;
+		font-size:18px;
+		letter-spacing:2px;
 		font-family:'Roboto', sans-serif;
 		text-decoration: none;
-		letter-spacing:14%;
+		transition:0.3s;
 }
 .routes > a:hover{
 		color:#D0A854;

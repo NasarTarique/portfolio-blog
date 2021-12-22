@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/about.css";
-// import {  } from  'react-router-dom';
+import { Link } from  'react-router-dom';
 
 function About() {
   return (
@@ -11,12 +11,12 @@ function About() {
           <span id="span-hey">Hey</span>, I am   
           <div className="about-name"> 
 
-				  <span>  Tarique Nasar .</span>
+				  <span>  Tarique Nasar.</span>
           </div>
-				<br />I am a programmer and a 2nd year <br/>BTech student .<br /> I love
+				<br />I am a programmer and a 3rd year <br/>BTech student .<br /> I love
 				coding , football and novels. <br/> check out my projects and blogs.
         </p>
-			  <a href="/contact">CONTACT</a>
+			  <Link to="/contact">CONTACT</Link>
       </div>
       <div className="about-img">
         <img src="/static/frontend/laptop-portfolio.jpg" alt="" />
