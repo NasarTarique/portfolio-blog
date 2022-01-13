@@ -1,32 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./styles/blogs.css";
 const Blog = () => {
+  const [blogs, getBlog] = useState([]);
+
+  useEffect(() => {
+    fetch("http://" + window.location.host + "/api/blogs/")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        getBlog(data);
+      });
+  }, []);
+
+  const getBlock = () => {
+    return blogs.map((elem) => {
+      return (
+        <div className="blog-block">
+          <h2 className="blog-name">{elem.Heading}</h2>
+          <p>{elem.Description}</p>
+          <div className="read-button">
+				  <Link to={"/blogs/"+elem.id}>READ MORE</Link>
+          </div>
+        </div>
+      );
+    });
+  };
+
   return (
     <div className="blogs-container">
       <div className="blogs">
-		<p className="blogs-header">BLOGS</p>
-        <div className="blog-block">
-          <h2 className="blog-name">How I Preview Markdown in Neovim [LINUX]</h2>
-          <p>There are a number of ways you can  preview  markdown in  neovim  .  The method that i use very often is using pandoc  and zathura and the other method  i will be going through is through a plugin</p>
-          <div className="read-button">
-				  <Link to="/blogs/1">READ MORE</Link>
-          </div>
-        </div>
-        <div className="blog-block">
-          <h2 className="blog-name">TORRENT PY</h2>
-          <p>A bit torrent client for the terminal implemented in python .</p>
-          <div className="read-button">
-            <a
-              href="https://github.com/NasarTarique/torrent_py"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {" "}
-              <i class="fab fa-github"></i> GITHUB
-            </a>
-          </div>
-        </div>
+        <p className="blogs-header">BLOGS</p>
+        {getBlock()}
       </div>
     </div>
   );

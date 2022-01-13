@@ -3,8 +3,9 @@ from django.urls import path
 from . import views
 
 router = routers.DefaultRouter()
+router.register('blogs',views.BlogViewset)
+router.register('projects',views.ProjectViewset)
 urlpatterns = [
-     #path('',)
 ]
 
 urlpatterns +=router.urls

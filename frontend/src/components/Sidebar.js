@@ -27,7 +27,7 @@ const Sidebar = () => {
         <Link to="/">ABOUT ME</Link>
         <Link to="/projects/">PROJECTS</Link>
         <Link to="/blogs/">BLOGS</Link>
-		<a href="" download>RESUME</a>
+		<a href="https://drive.google.com/file/d/1iG1EB0g82uVed2xyo0AKjbijG7zAN_B6/view?usp=sharing" download target="_blank" rel="noopener noreferrer">RESUME</a>
         <Link to="/contact/">CONTACT ME</Link>
         <div className="padding1"></div>
         <div className="padding1"></div>
