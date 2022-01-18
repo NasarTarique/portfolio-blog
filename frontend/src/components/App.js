@@ -16,6 +16,7 @@ function App() {
     <Router>
       <div className="home">
         <Sidebar />
+		<div className="sidebar-container-padding"></div>
 
         <div className="main">
 				<Route exact path="/">

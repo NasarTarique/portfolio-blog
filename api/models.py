@@ -11,5 +11,5 @@ class Blogs(models.Model):
 class Projects(models.Model):
     Name = models.CharField(max_length=50)
     Description = models.TextField()
-    Github = models.CharField(max_length=100,default="")
-    Website = models.CharField(max_length=100, default="")
+    Github = models.CharField(max_length=100,default="",blank=True)
+    Website = models.CharField(max_length=100, default="",blank=True)

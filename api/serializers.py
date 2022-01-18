@@ -8,6 +8,7 @@ class BlogSerializer(serializers.Serializer):
     Blog = serializers.CharField()
     Likes = serializers.IntegerField(default=0)
 
+
 class ProjectSerializer(serializers.Serializer):
     id =serializers.PrimaryKeyRelatedField(queryset=Projects.objects.all())
     Name = serializers.CharField()

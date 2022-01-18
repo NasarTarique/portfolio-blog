@@ -1,30 +1,68 @@
-import React from "react";
-import "./styles/projects.css"
+import React, { useState, useEffect } from "react";
+import "./styles/projects.css";
 
-const Projects = () =>{
-		return (
-				<div className="projects-container">
-				<div className="projects">
-						<p className="project-header">PROJECTS</p>
-						<div className="project-block">
-								<h2 className="project-name">TORRENT PY</h2>
-								<p>A bit torrent client for the terminal implemented in python .</p>
-								<div className="github-button">
-										<a href="https://github.com/NasarTarique/torrent_py" target="_blank" rel="noopener noreferrer"> <i class="fab fa-github"></i> GITHUB</a>
-										<a className="project-website" href="https://github.com/NasarTarique/torrent_py" target="_blank" rel="noopener noreferrer"> WEBSITE</a>
-								</div>
+const Projects = () => {
+  const [projects, getProjects] = useState([]);
 
-						</div>
-						<div className="project-block">
-								<h2 className="project-name">BLOGTOWN</h2>
-								<p>A bit torrent client for the terminal implemented in python .</p>
-								<div className="github-button">
-										<a href=""><i class="fab fa-github"></i> GITHUB</a>
-								</div>
-						</div>
-				</div>
-		</div>
-		)
-}
+  useEffect(() => {
+		  fetch("http://"+window.location.host + "/api/projects/")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        getProjects(data);
+      });
+  }, []);
+  const getGithub = (elem) => {
+    if (elem != "") {
+      return (
+        <a
+          href={elem}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {" "}
+          <i className="fab fa-github"></i> GITHUB
+        </a>
+      );
+    }
+  };
+  const getWebsite = (elem) => {
+    if (elem != "") {
+      return (
+        <a
+          className="project-website"
+          href={elem}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {" "}
+          WEBSITE
+        </a>
+      );
+    }
+  };
+  const getProjectBlog = () => {
+    return projects.map((elem) => {
+      return (
+        <div className="project-block" key={elem.id}>
+          <h2 className="project-name">{elem.Name}</h2>
+          <p>{elem.Description}</p>
+          <div className="github-button">
+            {getGithub(elem.Github)}
+            {getWebsite(elem.Website)}
+          </div>
+        </div>
+      );
+    });
+  };
+  return (
+    <div className="projects-container">
+      <div className="projects">
+        <p className="project-header">PROJECTS</p>
+        {getProjectBlog()}
+      </div>
+    </div>
+  );
+};
 
 export default Projects;

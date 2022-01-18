@@ -16,7 +16,7 @@ const Blog = () => {
   const getBlock = () => {
     return blogs.map((elem) => {
       return (
-        <div className="blog-block">
+        <div className="blog-block" key={elem.id}>
           <h2 className="blog-name">{elem.Heading}</h2>
           <p>{elem.Description}</p>
           <div className="read-button">
