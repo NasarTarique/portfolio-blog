@@ -64,6 +64,10 @@ label{
 		letter-spacing:1px;
 
 }
+.contactinput-container > form{
+		width:100%;
+
+}
 .submit-button:hover{
 		cursor:pointer;
 		background-color:#d0a854;

@@ -9,36 +9,28 @@ const Contact = () => {
     email: "",
     message: "",
   });
-		const formSubmit = (e)=>{
-				e.preventDefault()
-				setFormdata({
-						name:"",
-						email:"",
-						message:""
-				})
-		}
   return (
     <div className="contact-container">
       <div className="contactme">
         <p className="contactme-header">CONTACT ME</p>
       </div>
       <div className="contactinput-container">
+			  <form action="https://formsubmit.co/nasartarique@gmail.com" method="POST">
         <div className="contactinput">
           <div className="input-group">
             <label
-              htmlFor="name"
-              style={namefocus ? { color: "#d0a854" } : { color: "#101112" }}
+              htmlFor="name" style={namefocus ? { color: "#d0a854" } : { color: "#101112" }}
             >
               NAME
             </label>
             <input
               type="text"
               name="name"
-					value={formdata.name}
+              value={formdata.name}
               onChange={(e) => {
                 setFormdata({
                   ...formdata,
-						'name': e.target.value,
+                  name: e.target.value,
                 });
               }}
               onFocus={() => setNamefocus(true)}
@@ -55,11 +47,11 @@ const Contact = () => {
             <input
               type="text"
               name="email"
-					value={formdata.email}
+              value={formdata.email}
               onChange={(e) => {
                 setFormdata({
                   ...formdata,
-						'email': e.target.value,
+                  email: e.target.value,
                 });
               }}
               onFocus={() => setEmailfocus(true)}
@@ -81,19 +73,20 @@ const Contact = () => {
               onChange={(e) => {
                 setFormdata({
                   ...formdata,
-						'message': e.target.value,
+                  message: e.target.value,
                 });
               }}
-				value={formdata.message}
+              value={formdata.message}
               onFocus={() => setMessagefocus(true)}
-              onBlur={() => setMessagefocus(false)}
-            ></textarea>
+              onBlur={() => setMessagefocus(false)} ></textarea>
           </div>
-				<input className="submit-button" onClick={(e)=>formSubmit(e)} type="button" value="SEND" />
+          <input
+            className="submit-button"
+            type="submit"
+            value="SEND"
+          />
         </div>
-			  <h1>{formdata.name}</h1>
-			  <h1>{formdata.message}</h1>
-			  <h1>{formdata.email}</h1>
+				  </form>
       </div>
     </div>
   );

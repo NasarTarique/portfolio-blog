@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.response import Response
 from .models import Blogs,Projects
@@ -13,7 +12,7 @@ class BlogViewset(viewsets.ModelViewSet):
         serializer = Bloglistserializer(self.queryset, many=True) 
         return Response(serializer.data)
 
-
 class ProjectViewset(viewsets.ModelViewSet):
     serializer_class = ProjectSerializer
     queryset = Projects.objects.all()
+
