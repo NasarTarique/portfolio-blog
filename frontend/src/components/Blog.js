@@ -5,7 +5,7 @@ const Blog = () => {
   const [blogs, getBlog] = useState([]);
 
   useEffect(() => {
-    fetch("http://" + window.location.host + "/api/blogs/")
+		  fetch("https://" + window.location.host + "/api/blogs/")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

@@ -5,7 +5,7 @@ const Projects = () => {
   const [projects, getProjects] = useState([]);
 
   useEffect(() => {
-		  fetch("http://"+window.location.host + "/api/projects/")
+		  fetch("https://"+window.location.host + "/api/projects/")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
