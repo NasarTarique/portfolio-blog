@@ -22,7 +22,7 @@ const Contact = () => {
               htmlFor="name" style={namefocus ? { color: "#d0a854" } : { color: "#101112" }}
             >
               NAME
-            </label>
+			</label><input type="hidden" name="_url" value="https://tariquenasar.herokuapp.com/contact/">
             <input
               type="text"
               name="name"
