@@ -15,7 +15,7 @@ const Contact = () => {
         <p className="contactme-header">CONTACT ME</p>
       </div>
       <div className="contactinput-container">
-			  <form action="https://formsubmit.co/nasartarique@gmail.com" method="POST">
+			  <form action="https://formsubmit.co/8dd903d1d652c74593e9882b28f4a632" method="POST">
         <div className="contactinput">
           <div className="input-group">
             <label
